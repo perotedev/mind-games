@@ -87,12 +87,12 @@ body {
 
 .card-game {
     transition: all 200ms;
-    background-color: #161616;
+    background-color: #202121;
     color: #f8f9fa;
 }
 
 .card-game:hover {
-    background-color: #202121;
+    background-color: #404242;
     transform: scale(1.02);
     transition: all 200ms;
     z-index: 100;

@@ -1,1 +1,63 @@
-<p class="text-light opacity-85">EM DESENVOLVIMENTO!</p>
+<section class="fade-in pb-5">
+    <div class="pt-2">
+        <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">RULES GAMES</h1>
+    </div>
+
+    <div *ngIf="qtdAnswers < 21; else winner">
+        <div>
+            <h1 class="text-center text-light title-text opacity-85">Prove que descobriu a regra:</h1>
+        </div>
+    
+        <div class="pt-3 text-center text-light opacity-85">
+            <h1>{{ textoPergunta }}</h1>
+        </div>
+    
+        <div *ngIf="typeQuestion === 1; else typeZero">
+            <div class="d-flex justify-content-between mt-3" [ngClass]="{'big-text-sm-mobile': !isMobile}">
+                <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
+                <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
+            </div>
+        </div>
+    
+        <ng-template #typeZero>
+            <div *ngIf="subType === 1; else subTypeZero">
+                <div class="d-flex justify-content-between mt-3 fw-bolder" [ngClass]="{'big-text-sm-mobile': !isMobile}">
+                    <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
+                    <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
+                </div>
+            </div>
+    
+            <ng-template #subTypeZero>
+                <div class="row">
+                    <div *ngFor="let item of [0, 1, 2, 3]" class="col-3"  [ngClass]="{'big-text-sm-mobile': !isMobile}">
+                        <button (click)="tryAnswer0(item)" class="bg-success shadow py-2 px-4 rounded border-0 text-light fw-bold mt-2 w-100" type="submit">{{item}}</button>
+                    </div>
+                </div>
+            </ng-template>
+            
+        </ng-template>
+        
+    
+        <div class="pt-5 text-center text-light opacity-50">
+            <h1>{{ qtdAnswers }}/20</h1>
+        </div>
+    </div>
+
+    <ng-template #winner>
+        <div>
+            <div class="d-flex justify-content-center mb-3">
+                <img src="../../../../assets/imgs/tiririca.gif"/>
+            </div>
+
+            <h1 class="text-center text-light title-text opacity-85">Parece que você realmente descobriu a regra do jogo!</h1>
+        
+            <p class="mt-3 text-justify fs-5 text-light opacity-75">A regra para este jogo é simples. Uma palavra toca se para pronunciá-la você tiver que "tocar" os lábios, caso contrario não toca. A quantidade de vezes que a palavra toca é igual a quantidade de vezes que os lábios tocam ao pronunciar.</p>
+        
+            <div class="d-flex justify-content-center">
+                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded border-0" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+            </div>
+        </div>
+    </ng-template>
+    
+
+</section>

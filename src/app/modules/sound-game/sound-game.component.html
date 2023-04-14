@@ -1,1 +1,108 @@
-<p>sound-game works!</p>
+<section class="fade-in pb-5">
+    <div *ngIf="isMobile; else desktop">
+        <div class="d-flex flex-column justify-content-between">
+            <h1 class="text-center text-light title-text opacity-85">Jogo dos Sons</h1>
+            
+        </div>
+    
+        <div class="row">    
+            <div class="col-12">
+                <form [formGroup]="formGroup" (submit)="onSubmitForm()" class="mt-2">
+                    <div class="bg-light opacity-85 border-primary rounded w-100">
+                        <input 
+                            formControlName="inputValue" 
+                            class="w-100 big-text-sm-mobile py-2 px-4 rounded" 
+                            type="text" 
+                            name="inputValue" 
+                            id="inputValue" 
+                            placeholder="Digite algo que toca..." 
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="d-flex justify-content-end h-100 mt-3">
+                        <button class="bg-warning text-light py-2 px-4 me-3 rounded border-0 w-25" (click)="showDica()"> Dica? </button>
+                        <button class="bg-success py-2 px-4 rounded border-0 text-light w-75" type="submit">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div *ngIf="palpites.length > 0" class="col-12">
+            <p class="mt-3 opacity-85 text-light"><b>Últimos 5 palpites</b></p>
+            <table id="tabela-entradas" class="table text-light opacity-85">
+              <thead>
+                <tr>
+                  <th scope="col">Palpite</th>
+                  <th scope="col">Toca?</th>
+                </tr>
+              </thead>
+              <tbody id="ultimas-entradas">
+                <tr *ngFor="let palpite of palpites">
+                    <td>{{ palpite.palavra }}</td>
+                    <td>{{ palpite.toca?"Toca":"Não toca" }}</td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+
+        <p class="text-justify text-light opacity-85 mt-3"><b>Instruções:</b> Você deve descobrir a regra do jogo que define o que toca ou não toca. Para isso você pode verificar o que quiser digitando no campo abaixo, até que descubra com certeza o que toca. Quando você achar que descobriu a regra clique em "Descobri a regra".</p>
+        <button class="bg-dark text-light py-2 px-4 rounded border-0 w-100"> Descobri a regra </button>
+    </div>
+
+    <ng-template #desktop>
+        <div>
+            <div class="d-flex justify-content-between">
+                <h1 class="text-center text-light title-text opacity-85">Jogo dos Sons</h1>
+                <div class="d-flex justify-content-end h-100">
+                    <button class="bg-warning text-light py-2 px-4 me-3 rounded border-0" (click)="showDica()"> Dica? </button>
+                    <button class="bg-dark text-light py-2 px-4 rounded border-0"> Descobri a regra </button>
+                </div>
+            </div>
+        
+            <div class="row mt-2">
+                <div class="col-12">
+                    <p class="text-justify text-light opacity-85"><b>Instruções:</b> Você deve descobrir a regra do jogo que define o que toca ou não toca. Para isso você pode verificar o que quiser digitando no campo abaixo, até que descubra com certeza o que toca. Quando você achar que descobriu a regra clique em "Descobri a regra".</p>
+                </div>
+        
+                <div class="col-12">
+                    <form [formGroup]="formGroup" (submit)="onSubmitForm()" class="mt-2">
+                        <div class="d-flex justify-content-between">
+                            <div class="bg-light opacity-85 border-primary rounded w-100 me-3">
+                                <input 
+                                    formControlName="inputValue" 
+                                    class="w-100 big-text-sm py-2 px-4 rounded" 
+                                    type="text" 
+                                    name="inputValue" 
+                                    id="inputValue" 
+                                    placeholder="Digite aqui..." 
+                                    autocomplete="off"
+                                >
+                            </div>
+        
+                            <button class="bg-success py-2 px-4 rounded border-0" type="submit"><i class="bi bi-check text-light fs-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div *ngIf="palpites.length > 0" class="col-12">
+            <p class="mt-3 opacity-85 text-light"><b>Últimos 5 palpites</b></p>
+            <table id="tabela-entradas" class="table text-light opacity-85">
+              <thead>
+                <tr>
+                  <th scope="col">Palpite</th>
+                  <th scope="col">Toca?</th>
+                </tr>
+              </thead>
+              <tbody id="ultimas-entradas">
+                <tr *ngFor="let palpite of palpites">
+                    <td>{{ palpite.palavra }}</td>
+                    <td>{{ palpite.toca?"Toca":"Não toca" }}</td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </ng-template>
+</section>

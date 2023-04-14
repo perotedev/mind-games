@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SoundGameComponent } from './sound-game.component';
 import { SoundRoutes } from './sound-game.routing'
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { SoundRoutes } from './sound-game.routing'
   ],
   imports: [
     CommonModule,
-    SoundRoutes
+    SoundRoutes,
+    ReactiveFormsModule
   ]
 })
 export class SoundGameModule { }

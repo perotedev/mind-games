@@ -47,7 +47,7 @@
         </div>
 
         <p class="text-justify text-light opacity-85 mt-3"><b>Instruções:</b> Você deve descobrir a regra do jogo que define o que toca ou não toca. Para isso você pode verificar o que quiser digitando no campo abaixo, até que descubra com certeza o que toca. Quando você achar que descobriu a regra clique em "Descobri a regra".</p>
-        <button class="bg-dark text-light py-2 px-4 rounded border-0 w-100"> Descobri a regra </button>
+        <button class="bg-dark text-light py-2 px-4 rounded border-0 w-100" (click)="knowRule()"> Descobri a regra </button>
     </div>
 
     <ng-template #desktop>
@@ -56,7 +56,7 @@
                 <h1 class="text-center text-light title-text opacity-85">Jogo dos Sons</h1>
                 <div class="d-flex justify-content-end h-100">
                     <button class="bg-warning text-light py-2 px-4 me-3 rounded border-0" (click)="showDica()"> Dica? </button>
-                    <button class="bg-dark text-light py-2 px-4 rounded border-0"> Descobri a regra </button>
+                    <button class="bg-dark text-light py-2 px-4 rounded border-0" (click)="knowRule()"> Descobri a regra </button>
                 </div>
             </div>
         

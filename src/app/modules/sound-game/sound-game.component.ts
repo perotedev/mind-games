@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import Swal from 'sweetalert2';
 
@@ -27,7 +28,8 @@ export class SoundGameComponent {
   ];
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ){
     this.initForm();
   }
@@ -96,7 +98,7 @@ export class SoundGameComponent {
     if (this.dicaAtual>4){
       this.dicaAtual = 0;
     }
-    
+
     Swal.fire({
       title: "Jogo dos Sons",
       text: this.dicas[this.dicaAtual],
@@ -104,5 +106,9 @@ export class SoundGameComponent {
       confirmButtonText: "OK",
     });
     this.dicaAtual++;
+  }
+
+  public knowRule(){
+    this.router.navigate(['/home/sound-game/know-rule']);
   }
 }

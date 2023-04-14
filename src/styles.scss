@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("~bootstrap-icons/font/bootstrap-icons.css");
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'Rubik Pixels';
+    src: url('./assets/fonts/rubik-pixels-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/nunito-variable-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dyna Puff';
+    src: url('./assets/fonts/dyna-puff-variable-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #101111 repeat-y !important;
+    z-index: 1;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.card-game {
+    transition: all 200ms;
+    background-color: #161616;
+    color: #f8f9fa;
+}
+
+.card-game:hover {
+    background-color: #202121;
+    transform: scale(1.02);
+    transition: all 200ms;
+    z-index: 100;
+}
+
+.big-text {
+    font-size: 90px !important;
+    line-height: 6rem !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-shadow: 7px 7px black;
+}
+
+.title-text {
+    font-family: 'Dyna Puff' !important;
+}
+
+.description-text {
+    font-family: 'Nunito' !important;
+    font-size: medium;
+}
+
+.text-pixel {
+    font-family: 'Rubik Pixels' !important;
+}
+
+.container {
+    max-width: 780px !important;
+}

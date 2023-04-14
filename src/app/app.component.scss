@@ -1,0 +1,26 @@
+#bg-lines{
+    width: 100%;
+    height: 100vh;
+    background: url("../assets/imgs/bg-lines.svg") no-repeat left bottom;
+    filter: invert(0.934);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.5;
+    border: none;
+    z-index: -1;
+}
+
+#bg-lines-invert{
+    width: 100%;
+    height: 100vh;
+    background: url("../assets/imgs/bg-lines.svg") no-repeat left bottom;
+    filter: invert(0.934);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.5;
+    border: none;
+    z-index: -1;
+    rotate: 180deg;
+}

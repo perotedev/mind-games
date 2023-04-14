@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GameDescription } from '../interfaces/game-description';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'game-card',
@@ -8,4 +9,12 @@ import { GameDescription } from '../interfaces/game-description';
 })
 export class GameCardComponent {
   @Input() game: GameDescription;
+
+  constructor(
+    private router: Router
+  ){}
+
+  public openGame(): void {
+    this.router.navigate([`/home/${this.game.route}`])
+  }
 }

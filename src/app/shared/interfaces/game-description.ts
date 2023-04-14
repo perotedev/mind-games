@@ -3,4 +3,5 @@ export interface GameDescription {
     imgUri: string;
     description: string;
     type: string;
+    route: string;
 }

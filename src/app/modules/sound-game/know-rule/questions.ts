@@ -277,8 +277,8 @@ export const questions: Array<QuestionDescription> = [
     },
     {
         item: "Cinema",
-        toca: false,
-        toques: 0
+        toca: true,
+        toques: 1
     },
     {
         item: "Apresentador",

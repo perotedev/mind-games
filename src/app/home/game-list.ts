@@ -12,14 +12,14 @@ export const GameList: Array<GameDescription> = [
         name: "Jogo da Amizade",
         imgUri: "",
         description: "Descubra a regra do jogo para saber quem é ou não amigo.",
-        type: "Jogo multiplayer",
+        type: "Jogo solo",
         route: ""
     },
     {
-        name: "Jogo da Garrafa",
+        name: "Jogo dos que Sabem",
         imgUri: "",
-        description: "Descubra a regra do jogo para saber o se a garrafa está fechada ou aberta.",
-        type: "Jogo multiplayer",
+        description: "Descubra a regra do jogo para saber quem sabe ou não tocar.",
+        type: "Jogo solo",
         route: ""
     },
     {

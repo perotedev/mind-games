@@ -87,8 +87,7 @@ export class SoundGameComponent {
   private showPopupResultado(mensagem: string, toca:boolean): void {
     let iconText: any = toca?"success":"error";
     Swal.fire({
-      title: "Jogo dos Sons",
-      text: mensagem,
+      title: mensagem,
       icon: iconText,
       confirmButtonText: "OK",
     });
@@ -100,7 +99,7 @@ export class SoundGameComponent {
     }
 
     Swal.fire({
-      title: "Jogo dos Sons",
+      title: "Dica",
       text: this.dicas[this.dicaAtual],
       icon: "info",
       confirmButtonText: "OK",

@@ -6,6 +6,10 @@ const routes: Routes = [
       path: '',
       title: 'Home - Rules Games',
       component: HomeComponent
+    },
+    {
+      path: 'sound-game',
+      loadChildren: () => import('../modules/sound-game/sound-game.module').then((m) => m.SoundGameModule),
     }
 ];
 

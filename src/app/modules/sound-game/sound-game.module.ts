@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SoundGameComponent } from './sound-game.component';
-
+import { SoundRoutes } from './sound-game.routing'
 
 
 @NgModule({
@@ -9,7 +9,8 @@ import { SoundGameComponent } from './sound-game.component';
     SoundGameComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SoundRoutes
   ]
 })
 export class SoundGameModule { }

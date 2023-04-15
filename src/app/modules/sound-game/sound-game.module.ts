@@ -4,6 +4,7 @@ import { SoundGameComponent } from './sound-game.component';
 import { SoundRoutes } from './sound-game.routing'
 import { ReactiveFormsModule } from '@angular/forms';
 import { KnowRuleComponent } from './know-rule/know-rule.component';
+import { CommonGameModule } from 'src/app/shared/common-game/common-game.module';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { KnowRuleComponent } from './know-rule/know-rule.component';
   imports: [
     CommonModule,
     SoundRoutes,
-    ReactiveFormsModule
+    CommonGameModule
   ]
 })
 export class SoundGameModule { }

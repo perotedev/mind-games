@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import { QuestionDescription, questions } from './questions';
 import Swal from 'sweetalert2';
+import { applicationInfo } from 'src/environment/constants';
 
 @Component({
   selector: 'app-know-rule',
@@ -10,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class KnowRuleComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
+  public appName: string = applicationInfo.appName;
   public textoPergunta: string = "";
   public typeQuestion: number = 0;
   public subType: number = 0;

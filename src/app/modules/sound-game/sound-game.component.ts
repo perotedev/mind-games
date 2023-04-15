@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
+import { applicationInfo } from 'src/environment/constants';
 import Swal from 'sweetalert2';
-
-interface InputValue {
-  palavra: string;
-  toca: boolean;
-}
 
 @Component({
   selector: 'app-sound-game',
@@ -16,9 +11,8 @@ interface InputValue {
 })
 export class SoundGameComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
-  public formGroup: FormGroup;
+  public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
-  public dicaAtual: number = 0;
   public dicas: Array<string> = [
     "Paralelepipedo toca e toca três vezes.", 
     "Brasil toca e toca uma vez.", 
@@ -27,22 +21,9 @@ export class SoundGameComponent {
     "Mapa toca e toca duas vezes."
   ];
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router
-  ){
-    this.initForm();
-  }
-
-  private initForm(){
-    this.formGroup = this.formBuilder.group({
-      inputValue: ['', [Validators.required, Validators.minLength(2)]]
-    });
-  }
-
-  public onSubmitForm(){
-    if (this.formGroup.valid){
-      const entradaOriginal: string = this.formGroup.get('inputValue')?.value;
+  public onConfirm(value:string){
+    if (value.replace(/\s/g, '').length > 1){
+      const entradaOriginal: string = value;
       const palavra: string = entradaOriginal.toLowerCase();
       let mensagem = `${entradaOriginal} não toca.`;
       let toques = this.getQtdToques(palavra);     
@@ -52,15 +33,14 @@ export class SoundGameComponent {
       }
 
       this.palpites.unshift({
-          palavra: entradaOriginal,
-          toca: toques > 0,
+          input: entradaOriginal,
+          result: (toques > 0)?"Toca":"Não Toca",
       });
     
       if (this.palpites.length > 5){
         this.palpites.pop();
       }
   
-      this.initForm();
       this.showPopupResultado(
         mensagem,
         toques > 0
@@ -91,23 +71,5 @@ export class SoundGameComponent {
       icon: iconText,
       confirmButtonText: "OK",
     });
-  }
-
-  public showDica(): void {
-    if (this.dicaAtual>4){
-      this.dicaAtual = 0;
-    }
-
-    Swal.fire({
-      title: "Dica",
-      text: this.dicas[this.dicaAtual],
-      icon: "info",
-      confirmButtonText: "OK",
-    });
-    this.dicaAtual++;
-  }
-
-  public knowRule(){
-    this.router.navigate(['/home/sound-game/know-rule']);
   }
 }

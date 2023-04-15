@@ -14,23 +14,23 @@
     
         <div *ngIf="typeQuestion === 1; else typeZero">
             <div class="d-flex justify-content-between mt-3" [ngClass]="{'big-text-sm-mobile': !isMobile}">
-                <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
-                <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
+                <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
+                <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
             </div>
         </div>
     
         <ng-template #typeZero>
             <div *ngIf="subType === 1; else subTypeZero">
                 <div class="d-flex justify-content-between mt-3 fw-bolder" [ngClass]="{'big-text-sm-mobile': !isMobile}">
-                    <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
-                    <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
+                    <button (click)="tryAnswer1(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO TOCA</button>
+                    <button (click)="tryAnswer1(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">TOCA</button>
                 </div>
             </div>
     
             <ng-template #subTypeZero>
                 <div class="row">
                     <div *ngFor="let item of [0, 1, 2, 3]" class="col-3"  [ngClass]="{'big-text-sm-mobile': !isMobile}">
-                        <button (click)="tryAnswer0(item)" class="bg-success shadow py-2 px-4 rounded border-0 text-light fw-bold mt-2 w-100" type="submit">{{item}}</button>
+                        <button (click)="tryAnswer0(item)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light fw-bold mt-2 w-100" type="submit">{{item}}</button>
                     </div>
                 </div>
             </ng-template>

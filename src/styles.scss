@@ -108,7 +108,7 @@ body {
 
 .big-text-sm {
     font-size: 45px !important;
-    line-height: 3.5rem !important;
+    line-height: 3.0rem !important;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     text-shadow: 7px 7px black;
@@ -148,6 +148,13 @@ body {
 }
 
 .swal2-popup {
-    background-color: #161616 !important;
+    // background-color: #161616 !important;
+    background-color: rgb(33,37,41) !important;
     color: rgba($color: #ffffff, $alpha: 0.8) !important;
+    border-radius: 20px !important;
+    max-width: 95% !important;
+
+    button {
+        border-radius: 10px !important;
+    }
 }

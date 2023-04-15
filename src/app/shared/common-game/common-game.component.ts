@@ -60,10 +60,9 @@ export class CommonGameComponent {
     }
 
     Swal.fire({
-      title: "Dica",
-      text: this.tips[this.currentTip],
+      title: this.tips[this.currentTip],
       icon: "info",
-      confirmButtonText: "OK",
+      confirmButtonText: "OK"
     });
     this.currentTip++;
   }

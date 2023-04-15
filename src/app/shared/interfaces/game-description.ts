@@ -4,4 +4,5 @@ export interface GameDescription {
     description: string;
     type: string;
     route: string;
+    active: boolean;
 }

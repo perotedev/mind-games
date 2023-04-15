@@ -15,7 +15,7 @@ export class KnowRuleComponent {
   public textoPergunta: string = "";
   public typeQuestion: number = 0;
   public subType: number = 0;
-  public qtdAnswers: number = 1;
+  public qtdAnswers: number = 21;
   private itens: Array<QuestionDescription> = questions;
   private itemsVisitados: Array<number> = [];
   private itemAtual: number;

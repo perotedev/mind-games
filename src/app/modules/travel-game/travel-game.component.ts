@@ -26,9 +26,10 @@ export class TravelGameComponent implements OnInit {
   constructor(private meta: Meta) { }
   
   ngOnInit() {
-    this.meta.addTag({ name: 'title', content: 'Jogo da Volta ao Mundo' });
-    this.meta.addTag({ name: 'description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
-    // this.meta.addTag({ name: 'image', content: 'https://example.com/travel-game-thumbnail.jpg' });
+    this.meta.updateTag({ name: 'title', content: 'Jogo da Volta ao Mundo' });
+    this.meta.updateTag({ name: 'description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
+    this.meta.updateTag({ name: 'og:description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
+    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/travel-game' });
   }
   
   public onConfirm(value:string){

@@ -27,9 +27,10 @@ export class SingerGameComponent implements OnInit {
   constructor(private meta: Meta) { }
   
   ngOnInit() {
-    this.meta.addTag({ name: 'title', content: 'Jogo dos Cantores' });
-    this.meta.addTag({ name: 'description', content: 'Desvende a regra do jogo para descobrir quem sabe ou não cantar.' });
-    // this.meta.addTag({ name: 'image', content: 'https://example.com/travel-game-thumbnail.jpg' });
+    this.meta.updateTag({ name: 'title', content: 'Jogo dos Cantores' });
+    this.meta.updateTag({ name: 'description', content: 'Desvende a regra do jogo para descobrir quem sabe ou não cantar.' });
+    this.meta.updateTag({ name: 'og:description', content: 'Desvende a regra do jogo para descobrir quem sabe ou não cantar.' });
+    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/singer-game' });
   }
 
   public onConfirm(value:string){

@@ -25,9 +25,10 @@ export class SoundGameComponent implements OnInit{
   constructor(private meta: Meta) { }
   
   ngOnInit() {
-    this.meta.addTag({ name: 'title', content: 'Jogo dos Sons' });
-    this.meta.addTag({ name: 'description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
-    // this.meta.addTag({ name: 'image', content: 'https://example.com/travel-game-thumbnail.jpg' });
+    this.meta.updateTag({ name: 'title', content: 'Jogo dos Sons' });
+    this.meta.updateTag({ name: 'description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
+    this.meta.updateTag({ name: 'og:description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
+    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/sound-game' });
   }
 
   public onConfirm(value:string){

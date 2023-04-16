@@ -9,11 +9,15 @@ const routes: Routes = [
     },
     {
       path: 'sound-game',
-      loadChildren: () => import('../modules/sound-game/sound-game.module').then((m) => m.SoundGameModule),
+      loadChildren: () => import('../modules/sound-game/sound-game.module').then((m) => m.SoundGameModule)
     },
     {
       path: 'singer-game',
-      loadChildren: () => import('../modules/singer-game/singer-game.module').then((m) => m.SingerGameModule),
+      loadChildren: () => import('../modules/singer-game/singer-game.module').then((m) => m.SingerGameModule)
+    },
+    {
+      path: 'travel-game',
+      loadChildren: () => import('../modules/travel-game/travel-game.module').then((m) => m.TravelGameModule)
     }
 ];
 

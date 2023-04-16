@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div *ngIf="userInputs.length > 0; else noInputs" class="col-12">
+    <div *ngIf="userInputs.length > 0 && showInputs; else noInputs" class="col-12">
         <p class="mt-4 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
         <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
             <table class="table text-light opacity-85">
@@ -54,7 +54,7 @@
     </div>
 
     <ng-template #noInputs>
-        <div class="col-12">
+        <div *ngIf="showInputs" class="col-12">
             <p class="mt-4 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
             <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
                 <p class="text-center text-light opacity-85 p-0 m-0">Sem palpites no momento.</p>
@@ -103,7 +103,7 @@
         </div>
     </div>
     
-    <div *ngIf="userInputs.length > 0; else noInputs" class="col-12">
+    <div *ngIf="userInputs.length > 0 && showInputs; else noInputs" class="col-12">
         <p class="mt-5 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
         <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
             <table id="tabela-entradas" class="table text-light opacity-85">
@@ -124,7 +124,7 @@
     </div>
 
     <ng-template #noInputs>
-        <div class="col-12">
+        <div *ngIf="showInputs" class="col-12">
             <p class="mt-4 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
             <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
                 <p class="text-center text-light opacity-85 p-0 m-0">Sem palpites no momento.</p>

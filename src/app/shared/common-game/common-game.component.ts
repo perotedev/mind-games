@@ -20,7 +20,10 @@ export class CommonGameComponent {
   @Input() questionsRoute: string = "";
   @Input() tips: Array<string> = [];
   @Input() userInputs: Array<InputValue> = [];
+  @Input() nativeTips: boolean = true;
+  @Input() showInputs: boolean = true;
   @Output() onConfirm: EventEmitter<string> = new EventEmitter<string>;
+  @Output() onTip: EventEmitter<boolean> = new EventEmitter<boolean>;
 
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public formGroup: FormGroup;
@@ -55,15 +58,19 @@ export class CommonGameComponent {
   }
 
   public showDica(): void {
-    if (this.currentTip>4){
-      this.currentTip = 0;
+    if (this.nativeTips){
+      if (this.currentTip>4){
+        this.currentTip = 0;
+      }
+  
+      Swal.fire({
+        title: this.tips[this.currentTip],
+        icon: "info",
+        confirmButtonText: "OK"
+      });
+      this.currentTip++;
+    } else {
+      this.onTip.emit(true);
     }
-
-    Swal.fire({
-      title: this.tips[this.currentTip],
-      icon: "info",
-      confirmButtonText: "OK"
-    });
-    this.currentTip++;
   }
 }

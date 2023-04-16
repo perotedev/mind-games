@@ -17,14 +17,14 @@ export const GameList: Array<GameDescription> = [
         route: "singer-game",
         active: true
     },
-    // {
-    //     name: "Jogo da Amizade",
-    //     imgUri: "",
-    //     description: "Descubra a regra do jogo para saber quem é ou não amigo.",
-    //     type: "Jogo solo",
-    //     route: "",
-    //     active: false
-    // },
+    {
+        name: "Volta ao Mundo",
+        imgUri: "",
+        description: "Descubra a regra do jogo para saber o destino da viagem.",
+        type: "Jogo solo",
+        route: "travel-game",
+        active: true
+    },
     // {
     //     name: "Jogo dos Atores",
     //     imgUri: "",
@@ -34,7 +34,7 @@ export const GameList: Array<GameDescription> = [
     //     active: false
     // },
     // {
-    //     name: "Jogo da Viagem",
+    //     name: "Volta ao Mundo",
     //     imgUri: "",
     //     description: "Descubra a regra do jogo para saber os locais de viagem.",
     //     type: "Jogo solo",

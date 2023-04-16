@@ -1,0 +1,55 @@
+<section class="fade-in pb-5">
+    <div class="pt-2">
+        <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
+    </div>
+
+    <common-game
+        gameName="Volta ao Mundo"
+        intructions='Você deve descobrir a regra do jogo que define o próximo destino da viagem. Digite um destino (País, Cidade, Estado, etc) e selecione um meio de transporte, após isso confirme e você saberá se chegou ou não no destino. Você inicia viajando para Vitória de avião, qual o seu próximo destino? Quando você achar que descobriu a regra clique em "Descobri a Regra".'
+        questionsRoute="/home/travel-game/know-rule"
+        [tips]="dicas"
+        [nativeTips]="false"
+        [showInputs]="false"
+        (onConfirm)="onConfirm($event)"
+    ></common-game>
+
+    <div class="row">
+        <div *ngFor="let item of transportes; let i = index" class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <button 
+                (click)="selectTransporte(i)" 
+                class="rounded-pill border-0 w-100 shadow text-center text-light mt-3 py-2 px-3"
+                [ngClass]="{'bg-dark': i !== transporteIndex, 'bg-light text-dark': i === transporteIndex}">
+                {{ item }}
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="palpites.length > 0; else noInputs" class="col-12">
+        <p class="mt-5 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
+        <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
+            <table id="tabela-entradas" class="table text-light opacity-85">
+              <thead>
+                <tr>
+                  <th scope="col">Palpite</th>
+                  <th scope="col">Resultado</th>
+                </tr>
+              </thead>
+              <tbody id="ultimas-entradas">
+                <tr *ngFor="let input of palpites">
+                    <td>{{ input.input }}</td>
+                    <td>{{ input.result }}</td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-template #noInputs>
+        <div class="col-12">
+            <p class="mt-4 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
+            <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
+                <p class="text-center text-light opacity-85 p-0 m-0">Sem palpites no momento.</p>
+            </div>
+        </div>
+    </ng-template>
+</section>

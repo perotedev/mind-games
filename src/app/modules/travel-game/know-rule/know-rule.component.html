@@ -1,0 +1,46 @@
+<section class="fade-in pb-5 px-2">
+    <div class="pt-2">
+        <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
+    </div>
+
+    <div *ngIf="currentIndex < 18; else winner">
+        <div>
+            <h1 class="text-center text-light title-text opacity-85">Prove que descobriu a regra:</h1>
+        </div>
+    
+        <div class="pt-3 text-center text-light opacity-85">
+            <h1>{{ textoPergunta }}</h1>
+        </div>
+    
+        <div>
+            <div class="d-flex justify-content-between mt-3" [ngClass]="{'big-text-sm-mobile': !isMobile}">
+                <button (click)="tryAnswer(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO CHEGUEI</button>
+                <button (click)="tryAnswer(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">CHEGUEI</button>
+            </div>
+        </div>        
+    
+        <div class="pt-5 text-center text-light opacity-50">
+            <h1>{{ currentIndex+1 }}/18</h1>
+        </div>
+    </div>
+
+    <ng-template #winner>
+        <div>
+            <div class="d-flex justify-content-center mb-3">
+                <img src="https://media.tenor.com/a1sB2jyMIR4AAAAC/the-office-dancing.gif"/>
+            </div>
+
+            <h1 class="text-center text-light title-text opacity-85">Parece que você realmente descobriu a regra do jogo!</h1>
+        
+            <p class="mt-3 text-justify text-light opacity-75" [ngClass]="{'fs-5': !isMobile}">
+                A regra para este jogo é baseada na palavra <b>VOLTA</b>, daí o nome do jogo. Os destinos são locais que iniciam com as letras da palavra <b>VOLTA</b>. Sempre se inicia a viagem para um destino que comece com a letra <b>V</b> como Vitória. Em seguida deve-se ir para um destino que inicie com <b>O</b>, como Osasco ou Orlando. <br><br>
+                Os destinos seguem sempre a ordem das letras da palavra <b>VOLTA</b>, por isso não se pode ir de <b>V</b>itória para <b>L</b>ima, primeiro deve-se ir para um destino inicie com a letra <b>O</b> e após isso é possível ir para um destino que inicie com <b>L</b> Ao acabarem as letras da palavra volta-se ao início da mesma, ou seja, novamente um destino que inicie com <b>V</b>. <br> <br>
+                Por último, o meio de transporte não importa, serve apenas como distração para a real regra do jogo.
+            </p>
+        
+            <div class="d-flex justify-content-center">
+                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+            </div>
+        </div>
+    </ng-template>
+</section>

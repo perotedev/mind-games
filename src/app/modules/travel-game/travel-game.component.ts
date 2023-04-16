@@ -58,7 +58,7 @@ export class TravelGameComponent {
       }
     } else {
       this.showAlert(
-        "Digite um DESTINO e selecione um MEIO DE TRANSPORTE!"
+        "Selecione um MEIO DE TRANSPORTE!"
       )
     }
   }

@@ -106,6 +106,10 @@ export class KnowRuleComponent {
   }
 
   public share(): void {
-    HtmlUtils.share('https://perotedev.github.io/mind-games/home/sound-game');
+    HtmlUtils.share(
+      "Jogo dos Sons",
+      "Eu consegui descobrir a regra do jogo! E você, consegue?",
+      "https://perotedev.github.io/mind-games/home/sound-game"
+    );
   }
 }

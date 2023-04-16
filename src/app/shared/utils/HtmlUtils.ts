@@ -45,10 +45,11 @@ export class HtmlUtils {
       }
     }
 
-    public static share(url:string): void {
+    public static share(title:string, text:string, url:string): void {
       if (navigator.share) {
         navigator.share({
-          title: 'Eu consegui descobrir a regra do jogo! E você, consegue?',
+          title: title,
+          text: text,
           url: url
         }).then(() => {
           console.log('Obrigado por compartilhar!');

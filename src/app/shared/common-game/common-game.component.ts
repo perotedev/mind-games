@@ -18,6 +18,7 @@ export class CommonGameComponent {
   @Input() gameName: string = "";
   @Input() intructions: string = "";
   @Input() questionsRoute: string = "";
+  @Input() homeRoute: string = "";
   @Input() tips: Array<string> = [];
   @Input() userInputs: Array<InputValue> = [];
   @Input() nativeTips: boolean = true;
@@ -55,7 +56,7 @@ export class CommonGameComponent {
   }
 
   public goBack(): void {
-    HtmlUtils.previusPage();
+    this.router.navigate([this.homeRoute]);
   }
 
   public showDica(): void {

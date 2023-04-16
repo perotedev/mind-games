@@ -14,11 +14,11 @@ export class TravelGameComponent {
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
   public transporteIndex: number = -1;
-  public cidadeAtual: string = "Você está em Vitória";
+  public cidadeAtual: string = "";
   public dicas: Array<string> = ["Venezuela", "Ottawa", "Luxemburgo", "Tailândia", "Argentina"];
   public transportes: Array<string> = ["Carro", "Moto", "Barco", "Avião", "Bicicleta", "Trem"];
   
-  private ruleIndex: number = 1;
+  private ruleIndex: number = 0;
   private gameRule: Array<string> = ['v', 'o', 'l', 't', 'a'];
   
   public onConfirm(value:string){

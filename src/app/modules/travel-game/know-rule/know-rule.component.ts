@@ -28,8 +28,10 @@ export class KnowRuleComponent {
   }
 
   private setCurrentQuestion(): void {
-    this.currentQuestion = this.questions[this.currentIndex];
-    this.textoPergunta = this.currentQuestion.question;
+    if (this.currentIndex < 18){
+      this.currentQuestion = this.questions[this.currentIndex];
+      this.textoPergunta = this.currentQuestion.question;
+    }
   }
 
   public tryAnswer(value: boolean): void {
@@ -49,9 +51,6 @@ export class KnowRuleComponent {
 
     if (this.currentIndex < 18){
       this.addCount();
-    }
-
-    if (this.currentIndex < 17){
       this.setCurrentQuestion();
     }
   }

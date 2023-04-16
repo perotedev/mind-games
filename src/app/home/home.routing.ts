@@ -10,6 +10,10 @@ const routes: Routes = [
     {
       path: 'sound-game',
       loadChildren: () => import('../modules/sound-game/sound-game.module').then((m) => m.SoundGameModule),
+    },
+    {
+      path: 'singer-game',
+      loadChildren: () => import('../modules/singer-game/singer-game.module').then((m) => m.SingerGameModule),
     }
 ];
 

@@ -14,8 +14,8 @@ export const GameList: Array<GameDescription> = [
         imgUri: "",
         description: "Descubra a regra do jogo para saber quem sabe ou não cantar.",
         type: "Jogo solo",
-        route: "",
-        active: false
+        route: "singer-game",
+        active: true
     },
     // {
     //     name: "Jogo da Amizade",

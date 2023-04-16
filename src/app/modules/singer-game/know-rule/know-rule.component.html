@@ -1,0 +1,42 @@
+<section class="fade-in pb-5 px-2">
+    <div class="pt-2">
+        <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
+    </div>
+
+    <div *ngIf="qtdAnswers < 21; else winner">
+        <div>
+            <h1 class="text-center text-light title-text opacity-85">Prove que descobriu a regra:</h1>
+        </div>
+    
+        <div class="pt-3 text-center text-light opacity-85">
+            <h1>{{ textoPergunta }}</h1>
+        </div>
+    
+        <div>
+            <div class="d-flex justify-content-between mt-3" [ngClass]="{'big-text-sm-mobile': !isMobile}">
+                <button (click)="tryAnswer(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO SABE</button>
+                <button (click)="tryAnswer(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">SABE</button>
+            </div>
+        </div>        
+    
+        <div class="pt-5 text-center text-light opacity-50">
+            <h1>{{ qtdAnswers }}/20</h1>
+        </div>
+    </div>
+
+    <ng-template #winner>
+        <div>
+            <div class="d-flex justify-content-center mb-3">
+                <img src="https://media.tenor.com/mAJMFA1Gjj0AAAAd/baby-yoda-baby-yoda-dancing.gif"/>
+            </div>
+
+            <h1 class="text-center text-light title-text opacity-85">Parece que você realmente descobriu a regra do jogo!</h1>
+        
+            <p class="mt-3 text-center text-light opacity-75" [ngClass]="{'fs-5': !isMobile}">A regra para este jogo é simples. Sempre que o nome começar com uma nota musical (Dó, Ré, Mi, Fá, Sol, Lá, Si) ela sabe cantar. Dessa forma, <b>Do</b>uglas, <b>Re</b>beca, <b>Mi</b>guel, <b>Fá</b>tima, <b>Sol</b>ange, <b>La</b>rissa e <b>Si</b>maria sabem cantar.</p>
+        
+            <div class="d-flex justify-content-center">
+                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+            </div>
+        </div>
+    </ng-template>
+</section>

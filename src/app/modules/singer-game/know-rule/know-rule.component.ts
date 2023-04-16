@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
+import { HtmlUtils } from '../../../shared/utils/HtmlUtils';
+import { applicationInfo } from '../../../../environment/constants';
 import { QuestionDescription, questions } from './questions';
 import Swal from 'sweetalert2';
-import { applicationInfo } from 'src/environment/constants';
 
 @Component({
   selector: 'app-know-rule',
@@ -13,8 +13,6 @@ export class KnowRuleComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public textoPergunta: string = "";
-  public typeQuestion: number = 0;
-  public subType: number = 0;
   public qtdAnswers: number = 1;
   private itens: Array<QuestionDescription> = questions;
   private itemsVisitados: Array<number> = [];
@@ -34,39 +32,11 @@ export class KnowRuleComponent {
 
   private selectQuestion(): void {
     this.generateItem();
-
-    if (this.itens[this.itemAtual].toca){
-      this.generateType0();
-    } else {
-      this.generateType1();
-    }
+    this.textoPergunta = `"${this.itens[this.itemAtual].name}" sabe cantar?`
   }
 
-  private generateType0(): void {
-    this.subType = Math.floor(Math.random() * 2);
-    this.typeQuestion = 0;
-    if (this.subType === 0) {
-      this.textoPergunta = `"${this.itens[this.itemAtual].item}" toca quantas vezes?`
-    } else {
-      this.generateType1();
-    }
-  }
-
-  private generateType1(): void {
-    this.typeQuestion = 1;
-    this.textoPergunta = `"${this.itens[this.itemAtual].item}" toca?`
-  }
-
-  public tryAnswer0(value: number): void {
-    if (value === this.itens[this.itemAtual].toques){
-      this.corretAnswer();
-    } else {
-      this.wrongAnswer();
-    }
-  }
-  
-  public tryAnswer1(value: boolean): void {
-    if(value === this.itens[this.itemAtual].toca){
+  public tryAnswer(value: boolean): void {
+    if (value === this.itens[this.itemAtual].canta){
       this.corretAnswer();
     } else {
       this.wrongAnswer();

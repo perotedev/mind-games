@@ -74,4 +74,8 @@ export class KnowRuleComponent {
   public back(): void {
     HtmlUtils.previusPage();
   }
+
+  public share(): void {
+    HtmlUtils.share('https://perotedev.github.io/mind-games/home/singer-game');
+  }
 }

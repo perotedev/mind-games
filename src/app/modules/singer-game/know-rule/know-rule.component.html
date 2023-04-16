@@ -35,7 +35,8 @@
             <p class="mt-3 text-center text-light opacity-75" [ngClass]="{'fs-5': !isMobile}">A regra para este jogo é simples. Sempre que o nome começar com uma nota musical (Dó, Ré, Mi, Fá, Sol, Lá, Si) ela sabe cantar. Dessa forma, <b>Do</b>uglas, <b>Re</b>beca, <b>Mi</b>guel, <b>Fá</b>tima, <b>Sol</b>ange, <b>La</b>rissa e <b>Si</b>maria sabem cantar.</p>
         
             <div class="d-flex justify-content-center">
-                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0 me-3" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+                <button class=" bg-success text-light mt-3 p-2 rounded-circle border-0" (click)="share()"><i class="bi bi-share-fill px-1"></i></button>
             </div>
         </div>
     </ng-template>

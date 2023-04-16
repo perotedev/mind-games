@@ -44,4 +44,16 @@ export class HtmlUtils {
         element.style.transform = `scale(${scaleNumber})`;
       }
     }
+
+    public static share(url:string): void {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Eu consegui descobrir a regra do jogo! E você, consegue?',
+          url: url
+        }).then(() => {
+          console.log('Obrigado por compartilhar!');
+        })
+        .catch(console.error);
+      }
+    }
   }

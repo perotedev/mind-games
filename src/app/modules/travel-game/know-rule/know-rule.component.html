@@ -37,9 +37,10 @@
                 Os destinos seguem sempre a ordem das letras da palavra <b>VOLTA</b>, por isso não se pode ir de <b>V</b>itória para <b>L</b>ima, primeiro deve-se ir para um destino inicie com a letra <b>O</b> e após isso é possível ir para um destino que inicie com <b>L</b> Ao acabarem as letras da palavra volta-se ao início da mesma, ou seja, novamente um destino que inicie com <b>V</b>. <br> <br>
                 Por último, o meio de transporte não importa, serve apenas como distração para a real regra do jogo.
             </p>
-        
+            
             <div class="d-flex justify-content-center">
-                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+                <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0 me-3" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>
+                <button class=" bg-success text-light mt-3 p-2 rounded-circle border-0" (click)="share()"><i class="bi bi-share-fill px-1"></i></button>
             </div>
         </div>
     </ng-template>

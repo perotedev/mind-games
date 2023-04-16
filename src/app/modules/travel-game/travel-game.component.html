@@ -1,9 +1,9 @@
-<section class="fade-in pb-5">
+<section class="pb-5">
     <div class="pt-2">
         <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
     </div>
 
-    <div [ngClass]="{'px-2': !isMobile}">
+    <div class="fade-in" [ngClass]="{'px-2': !isMobile}">
         <common-game
             gameName="Volta ao Mundo"
             intructions='Você deve descobrir a regra do jogo que define o próximo destino da viagem. Digite um destino (País, Cidade, Estado, etc) e selecione um meio de transporte, após isso confirme e você saberá se chegou ou não no destino. Quando você achar que descobriu a regra clique em "Descobri a Regra".'
@@ -18,7 +18,7 @@
         ></common-game>
     </div>
 
-    <div class="row px-2">
+    <div class="row px-2 fade-in">
         <div *ngFor="let item of transportes; let i = index" class="col-4 col-md-3 col-lg-2">
             <button 
                 (click)="selectTransporte(i)" 
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div *ngIf="palpites.length > 0; else noInputs" class="px-2">
+    <div *ngIf="palpites.length > 0; else noInputs" class="px-2 fade-in">
         <p class="mt-5 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
         <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
             <table id="tabela-entradas" class="table text-light opacity-85">
@@ -50,7 +50,7 @@
     </div>
 
     <ng-template #noInputs>
-        <div class="px-2">
+        <div class="px-2 fade-in">
             <p class="mt-4 opacity-85 text-center text-light title-text"><b>Últimos 5 palpites</b></p>
             <div class="mt-3 bg-dark shadow rounded-4 px-4 py-3 fade-in">
                 <p class="text-center text-light opacity-85 p-0 m-0">Sem palpites no momento.</p>

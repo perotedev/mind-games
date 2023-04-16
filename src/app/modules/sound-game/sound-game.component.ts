@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import { applicationInfo } from 'src/environment/constants';
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './sound-game.component.html',
   styleUrls: ['./sound-game.component.scss']
 })
-export class SoundGameComponent {
+export class SoundGameComponent implements OnInit{
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
@@ -20,6 +21,14 @@ export class SoundGameComponent {
     "Violão não toca.", 
     "Mapa toca e toca duas vezes."
   ];
+
+  constructor(private meta: Meta) { }
+  
+  ngOnInit() {
+    this.meta.addTag({ name: 'title', content: 'Jogo dos Sons' });
+    this.meta.addTag({ name: 'description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
+    // this.meta.addTag({ name: 'image', content: 'https://example.com/travel-game-thumbnail.jpg' });
+  }
 
   public onConfirm(value:string){
     if (value.replace(/\s/g, '').length > 1){

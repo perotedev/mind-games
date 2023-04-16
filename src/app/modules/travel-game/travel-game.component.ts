@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import { applicationInfo } from 'src/environment/constants';
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './travel-game.component.html',
   styleUrls: ['./travel-game.component.scss']
 })
-export class TravelGameComponent {
+export class TravelGameComponent implements OnInit {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
@@ -21,6 +22,14 @@ export class TravelGameComponent {
   private indexTransporte: number = 0;
   private ruleIndex: number = 0;
   private gameRule: Array<string> = ['v', 'o', 'l', 't', 'a'];
+
+  constructor(private meta: Meta) { }
+  
+  ngOnInit() {
+    this.meta.addTag({ name: 'title', content: 'Jogo da Volta ao Mundo' });
+    this.meta.addTag({ name: 'description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
+    // this.meta.addTag({ name: 'image', content: 'https://example.com/travel-game-thumbnail.jpg' });
+  }
   
   public onConfirm(value:string){
     if (value.replace(/\s/g, '').length > 3 && this.transporteIndex > -1){

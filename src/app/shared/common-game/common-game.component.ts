@@ -22,6 +22,7 @@ export class CommonGameComponent {
   @Input() userInputs: Array<InputValue> = [];
   @Input() nativeTips: boolean = true;
   @Input() showInputs: boolean = true;
+  @Input() moreInfo: string = "";
   @Output() onConfirm: EventEmitter<string> = new EventEmitter<string>;
   @Output() onTip: EventEmitter<boolean> = new EventEmitter<boolean>;
 

@@ -14,17 +14,9 @@ export class TravelGameComponent {
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
   public transporteIndex: number = -1;
-  public dicas: Array<string> = [
-    "Venezuela", 
-    "Ottawa", 
-    "Luxemburgo", 
-    "Tailândia", 
-    "Argentina"
-  ];
-
-  public transportes: Array<string> = [
-    "Carro", "Moto", "Navio", "Avião", "Bicicleta", "Trem"
-  ]
+  public cidadeAtual: string = "Você está em Vitória";
+  public dicas: Array<string> = ["Venezuela", "Ottawa", "Luxemburgo", "Tailândia", "Argentina"];
+  public transportes: Array<string> = ["Carro", "Moto", "Barco", "Avião", "Bicicleta", "Trem"];
   
   private ruleIndex: number = 1;
   private gameRule: Array<string> = ['v', 'o', 'l', 't', 'a'];
@@ -47,6 +39,7 @@ export class TravelGameComponent {
 
       if (this.gameRule[this.ruleIndex] === letra){
         mensagem = `Você chegou em ${entradaOriginal}.`;
+        this.cidadeAtual = `Você está em ${entradaOriginal}`
         this.showPopupResultado(mensagem, true);
         this.ruleIndex++;
       } else {

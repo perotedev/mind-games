@@ -9,6 +9,10 @@
         </div>
 
         <p class="text-justify text-light opacity-85"><b>Instruções:</b> {{ intructions }}</p>
+
+        <div *ngIf="moreInfo.length > 0" class="mb-2 text-center w-100">
+            <p class="m-0 p-0 text-light opacity-75 title-text fs-5">{{moreInfo}}</p>
+        </div>
     </div>
 
     <div class="row">    
@@ -79,6 +83,10 @@
         <div class="row mt-2">
             <div class="col-12">
                 <p class="text-justify text-light opacity-85"><b>Instruções:</b> {{ intructions }}</p>
+            </div>
+
+            <div *ngIf="moreInfo.length > 0" class="mb-3 text-center w-100">
+                <p class="m-0 p-0 text-light opacity-75 title-text fs-5">{{moreInfo}}</p>
             </div>
     
             <div class="col-12">

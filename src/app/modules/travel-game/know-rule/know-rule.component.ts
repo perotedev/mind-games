@@ -76,8 +76,8 @@ export class KnowRuleComponent {
   public share(): void {
     HtmlUtils.share(
       "Jogo da Volta ao Mundo",
-      "Eu consegui descobrir a regra do jogo! E você, consegue?",
-      "https://perotedev.github.io/mind-games/home/travel-game"
+      "Eu consegui descobrir a regra do jogo Volta ao Mundo! E você, consegue?",
+      "https://perotedev.github.io/mind-games"
     );
   }
 }

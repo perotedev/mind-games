@@ -1,16 +1,15 @@
 import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { applicationInfo } from './../../../environment/constants';
 import { HtmlUtils } from './../../shared/utils/HtmlUtils';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
-import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-singer-game',
   templateUrl: './singer-game.component.html',
   styleUrls: ['./singer-game.component.scss']
 })
-export class SingerGameComponent implements OnInit {
+export class SingerGameComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
@@ -23,15 +22,6 @@ export class SingerGameComponent implements OnInit {
   ];
 
   private notes: Array<string> = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si'];
-
-  constructor(private meta: Meta) { }
-  
-  ngOnInit() {
-    this.meta.updateTag({ name: 'title', content: 'Jogo dos Cantores' });
-    this.meta.updateTag({ name: 'description', content: 'Desvende a regra do jogo para descobrir quem sabe ou não cantar.' });
-    this.meta.updateTag({ name: 'og:description', content: 'Desvende a regra do jogo para descobrir quem sabe ou não cantar.' });
-    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/singer-game' });
-  }
 
   public onConfirm(value:string){
     if (value.replace(/\s/g, '').length > 4){

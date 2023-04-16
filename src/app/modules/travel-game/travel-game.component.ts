@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import { applicationInfo } from 'src/environment/constants';
@@ -10,7 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './travel-game.component.html',
   styleUrls: ['./travel-game.component.scss']
 })
-export class TravelGameComponent implements OnInit {
+export class TravelGameComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
@@ -22,15 +21,6 @@ export class TravelGameComponent implements OnInit {
   private indexTransporte: number = 0;
   private ruleIndex: number = 0;
   private gameRule: Array<string> = ['v', 'o', 'l', 't', 'a'];
-
-  constructor(private meta: Meta) { }
-  
-  ngOnInit() {
-    this.meta.updateTag({ name: 'title', content: 'Jogo da Volta ao Mundo' });
-    this.meta.updateTag({ name: 'description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
-    this.meta.updateTag({ name: 'og:description', content: 'Descubra a regra do jogo para saber o próximo destino da viagem.' });
-    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/travel-game' });
-  }
   
   public onConfirm(value:string){
     if (value.replace(/\s/g, '').length > 3 && this.transporteIndex > -1){

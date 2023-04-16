@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { InputValue } from 'src/app/shared/common-game/common-game.component';
 import { HtmlUtils } from 'src/app/shared/utils/HtmlUtils';
 import { applicationInfo } from 'src/environment/constants';
@@ -10,7 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './sound-game.component.html',
   styleUrls: ['./sound-game.component.scss']
 })
-export class SoundGameComponent implements OnInit{
+export class SoundGameComponent {
   public isMobile: boolean = HtmlUtils.isMobileDevice();
   public appName: string = applicationInfo.appName;
   public palpites: Array<InputValue> = [];
@@ -21,15 +20,6 @@ export class SoundGameComponent implements OnInit{
     "Violão não toca.", 
     "Mapa toca e toca duas vezes."
   ];
-
-  constructor(private meta: Meta) { }
-  
-  ngOnInit() {
-    this.meta.updateTag({ name: 'title', content: 'Jogo dos Sons' });
-    this.meta.updateTag({ name: 'description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
-    this.meta.updateTag({ name: 'og:description', content: 'Descubra a regra do jogo para saber o que toca ou não toca.' });
-    this.meta.updateTag({ name: 'og:url', content: 'https://perotedev.github.io/mind-games/sound-game' });
-  }
 
   public onConfirm(value:string){
     if (value.replace(/\s/g, '').length > 1){

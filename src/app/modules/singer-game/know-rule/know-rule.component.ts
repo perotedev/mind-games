@@ -78,8 +78,8 @@ export class KnowRuleComponent {
   public share(): void {
     HtmlUtils.share(
       "Jogo dos Cantores",
-      "Eu consegui descobrir a regra do jogo! E você, consegue?",
-      "https://perotedev.github.io/mind-games/home/singer-game"
+      "Eu consegui descobrir a regra do Jogo dos Cantores! E você, consegue?",
+      "https://perotedev.github.io/mind-games"
     );
   }
 }

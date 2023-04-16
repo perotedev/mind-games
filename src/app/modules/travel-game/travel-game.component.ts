@@ -67,6 +67,17 @@ export class TravelGameComponent {
     this.transporteIndex = index;
   }
 
+  public showDica(value:boolean): void {
+    let dicaIndex: number = this.ruleIndex;
+    if (dicaIndex > 4){
+      dicaIndex = 0;
+    }
+    
+    if (value){
+      this.showAlert(`Seu próximo destino pode ser ${this.dicas[dicaIndex]}`)
+    }
+  }
+
   private showPopupResultado(mensagem: string, chegou:boolean): void {
     let iconText: any = chegou?"success":"error";
     Swal.fire({

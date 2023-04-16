@@ -1,4 +1,4 @@
-<section class="fade-in pb-5">
+<section class="fade-in pb-5 px-2">
     <div class="pt-2">
         <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
     </div>
@@ -11,10 +11,11 @@
         [nativeTips]="false"
         [showInputs]="false"
         (onConfirm)="onConfirm($event)"
+        (onTip)="showDica($event)"
     ></common-game>
 
     <div class="row">
-        <div *ngFor="let item of transportes; let i = index" class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div *ngFor="let item of transportes; let i = index" class="col-4 col-md-3 col-lg-2">
             <button 
                 (click)="selectTransporte(i)" 
                 class="rounded-pill border-0 w-100 shadow text-center text-light mt-3 py-2 px-3"

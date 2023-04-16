@@ -4,8 +4,9 @@
 @import '@sweetalert2/theme-dark/dark.scss';
 
 @font-face {
-    font-family: 'Rubik Pixels';
-    src: url('./assets/fonts/rubik-pixels-regular.ttf') format('truetype');
+    font-family: 'Russo One';
+    // src: url('./assets/fonts/rubik-pixels-regular.ttf') format('truetype');
+    src: url('./assets/fonts/russo-one-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -99,7 +100,7 @@ body {
 }
 
 .big-text {
-    font-size: 90px !important;
+    font-size: 92px !important;
     line-height: 6rem !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -132,7 +133,7 @@ body {
 }
 
 .text-pixel {
-    font-family: 'Rubik Pixels' !important;
+    font-family: 'Russo One' !important;
 }
 
 .container {

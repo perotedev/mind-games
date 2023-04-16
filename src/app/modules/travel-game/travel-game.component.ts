@@ -30,7 +30,7 @@ export class TravelGameComponent {
       let mensagem = `Você não chegou em ${entradaOriginal}`;
 
       this.palpites.unshift({
-        input: entradaOriginal,
+        input: `${entradaOriginal} de ${this.transportes[this.transporteIndex].toLowerCase()}`,
         result: this.gameRule[this.ruleIndex] === letra?"Chegou":"Não chegou",
       });
   

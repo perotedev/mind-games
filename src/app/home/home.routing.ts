@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
     {
       path: '',
-      title: 'Home - Rules Games',
+      title: 'Regra do Jogo',
       component: HomeComponent
     },
     {

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    title: 'Rules Games',
+    title: 'Regra do Jogo',
     pathMatch: 'full',
     redirectTo: 'home'
   },

@@ -18,6 +18,10 @@ const routes: Routes = [
     {
       path: 'travel-game',
       loadChildren: () => import('../modules/travel-game/travel-game.module').then((m) => m.TravelGameModule)
+    },
+    {
+      path: 'tunnel-game',
+      loadChildren: () => import('../modules/tunnel-game/tunnel-game.module').then((m) => m.TunnelGameModule)
     }
 ];
 

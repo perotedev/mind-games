@@ -14,8 +14,8 @@
     
         <div>
             <div class="d-flex justify-content-between mt-3" [ngClass]="{'big-text-sm-mobile': !isMobile}">
-                <button (click)="tryAnswer(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO SABE</button>
-                <button (click)="tryAnswer(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">SABE</button>
+                <button (click)="tryAnswer(false)" class="bg-danger shadow py-2 px-4 rounded-pill border-0 text-light w-50 me-3 fw-bold" type="submit">NÃO PASSA</button>
+                <button (click)="tryAnswer(true)" class="bg-success shadow py-2 px-4 rounded-pill border-0 text-light w-50 fw-bold" type="submit">PASSA</button>
             </div>
         </div>        
     
@@ -27,12 +27,12 @@
     <ng-template #winner>
         <div class="fade-in px-2">
             <div class="d-flex justify-content-center mb-3">
-                <img src="https://media.tenor.com/mAJMFA1Gjj0AAAAd/baby-yoda-baby-yoda-dancing.gif"/>
+                <img src="https://media.tenor.com/FgaSQljaZVwAAAAd/dance-dog.gif"/>
             </div>
 
             <h1 class="text-center text-light title-text opacity-85">Parece que você realmente descobriu a regra do jogo!</h1>
         
-            <p class="mt-3 text-center text-light opacity-75" [ngClass]="{'fs-5': !isMobile}">A regra para este jogo é simples. Sempre que o nome começar com uma nota musical (Dó, Ré, Mi, Fá, Sol, Lá, Si) ela sabe cantar. Dessa forma, <b>Do</b>uglas, <b>Re</b>beca, <b>Mi</b>guel, <b>Fá</b>tima, <b>Sol</b>ange, <b>La</b>rissa e <b>Si</b>maria sabem cantar.</p>
+            <p class="mt-3 text-center text-light opacity-75" [ngClass]="{'fs-5': !isMobile}">A regra para este jogo é bem simples. Sempre que uma palavra tiver acentos ela passa pelo túnel invisível. Dessa forma, Bal<b>ã</b>o, L<b>á</b>pis, e Buqu<b>ê</b> passam pelo túnel.</p>
         
             <div class="d-flex justify-content-center">
                 <button class=" bg-dark text-light mt-3 py-2 px-5 rounded-pill border-0 me-3" [ngClass]="{'w-100': isMobile}" (click)="back()"> Voltar </button>

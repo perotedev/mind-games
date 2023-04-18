@@ -25,6 +25,14 @@ export const GameList: Array<GameDescription> = [
         route: "travel-game",
         active: true
     },
+    {
+        name: "Túnel Invisível",
+        imgUri: "",
+        description: "Descubra a regra do jogo para saber o que passa ou não pelo túnel.",
+        type: "Jogo solo",
+        route: "tunnel-game",
+        active: true
+    },
     // {
     //     name: "Jogo dos Atores",
     //     imgUri: "",

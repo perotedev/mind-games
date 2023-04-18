@@ -1,0 +1,17 @@
+<section class="pb-5">
+    <div class="pt-2">
+        <h1 class="mt-3 text-center text-light text-pixel rounded" [ngClass]="{'big-text': !isMobile, 'big-text-sm': isMobile}">{{appName | uppercase}}</h1>
+    </div>
+
+    <div class="fade-in">
+        <common-game
+            gameName="Túnel Invisível"
+            intructions='Você deve descobrir a regra do jogo que define o que passa ou não pelo túnel invisível. Para isso você pode verificar o que quiser digitando no campo abaixo, até que descubra com certeza o que passa pelo túnel. Quando você achar que descobriu a regra clique em "Descobri a Regra".'
+            questionsRoute="/home/tunnel-game/know-rule"
+            homeRoute="/home"
+            [tips]="dicas"
+            [userInputs]="palpites"
+            (onConfirm)="onConfirm($event)"
+        ></common-game>
+    </div>
+</section>
